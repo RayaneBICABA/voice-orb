@@ -2,13 +2,13 @@
 
 A real-time, audio-reactive 3D particle visualization built with Angular and Three.js. VoiceOrb renders a sphere composed of thousands of particles that pulse and scale in response to your voice or ambient sound captured via the device microphone.
 
-![Screenshot 1](./screenshot-1.png)
+![Screenshot 1](./Screenshot_1.png)
 
-![Screenshot 2](./screenshot-2.png)
+![Screenshot 2](./Screenshot_2.png)
 
 ## Demo
 
-[![Demo video](./demo-thumbnail.png)](./demo.mp4)
+<video src="./demo.mp4" controls width="100%" poster="./Screenshot_1.png"></video>
 
 ## Features
 
