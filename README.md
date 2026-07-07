@@ -8,7 +8,7 @@ A real-time, audio-reactive 3D particle visualization built with Angular and Thr
 
 ## Demo
 
-<video src="./demo.mp4" controls width="100%" poster="./Screenshot_1.png"></video>
+<video src="https://raw.githubusercontent.com/RayaneBICABA/voice-orb/main/demo.mp4" controls width="100%" poster="./Screenshot_1.png"></video>
 
 ## Features
 
