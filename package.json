@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build @pank4ss/voice-orb-lib",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -29,6 +30,7 @@
     "@tailwindcss/postcss": "^4.1.12",
     "@types/three": "^0.185.0",
     "jsdom": "^28.0.0",
+    "ng-packagr": "^22.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.1.12",

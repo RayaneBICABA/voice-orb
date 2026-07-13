@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@ang
 import * as THREE from 'three';
 
 @Component({
-  selector: 'app-voice-orb',
+  selector: 'lib-voice-orb',
   imports: [],
   templateUrl: './voice-orb.html',
   styleUrl: './voice-orb.css',

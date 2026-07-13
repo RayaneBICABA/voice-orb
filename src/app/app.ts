@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { VoiceOrb } from './components/voice-orb/voice-orb';
+import { VoiceOrb } from '@pank4ss/voice-orb-lib';
 
 @Component({
   selector: 'app-root',

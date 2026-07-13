@@ -2,6 +2,9 @@
 
 A real-time, audio-reactive 3D particle visualization built with Angular and Three.js. VoiceOrb renders a sphere composed of thousands of particles that pulse and scale in response to your voice or ambient sound captured via the device microphone.
 
+> **Reusable npm package** — [`@pank4ss/voice-orb-lib`](https://www.npmjs.com/package/@pank4ss/voice-orb-lib)  
+> Drop `<lib-voice-orb></lib-voice-orb>` into any Angular 22+ standalone app.
+
 ![Screenshot 1](./Screenshot_1.png)
 
 ![Screenshot 2](./Screenshot_2.png)
@@ -36,15 +39,38 @@ A real-time, audio-reactive 3D particle visualization built with Angular and Thr
 - A modern browser with Web Audio API and `getUserMedia` support
 - A connected microphone
 
-## Getting Started
+## Usage (as a library)
+
+```bash
+npm install @pank4ss/voice-orb-lib
+```
+
+```typescript
+import { Component } from '@angular/core';
+import { VoiceOrb } from '@pank4ss/voice-orb-lib';
+
+@Component({
+  selector: 'app-root',
+  imports: [VoiceOrb],
+  template: `<lib-voice-orb></lib-voice-orb>`,
+})
+export class AppComponent {}
+```
+
+> Requires Angular 22+ and three.js (`^0.185.1`) as peer dependencies.
+
+## Getting Started (demo app)
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/voice-orb.git
+git clone https://github.com/PANK4SS/voice-orb.git
 cd voice-orb
 
 # Install dependencies
 npm install
+
+# Build the library first
+npm run build:lib
 
 # Start the development server
 npm start
@@ -57,7 +83,8 @@ Open your browser at `http://localhost:4200/` and allow microphone access when p
 | Script | Description |
 |---|---|
 | `npm start` | Start the development server with hot module replacement |
-| `npm run build` | Build the project for production (output in `dist/`) |
+| `npm run build` | Build the demo app for production (output in `dist/voice-orb`) |
+| `npm run build:lib` | Build the `@pank4ss/voice-orb-lib` library (output in `dist/voice-orb-lib`) |
 | `npm run watch` | Build in watch mode for development |
 | `npm test` | Run unit tests with Vitest |
 
@@ -74,20 +101,25 @@ The core visualization lives in a standalone Angular component that manages a Th
 ## Project Structure
 
 ```
-src/
+projects/
+  voice-orb-lib/              # Reusable library (@pank4ss/voice-orb-lib)
+    src/lib/
+      voice-orb.ts            # Three.js scene, mic logic, animation loop
+      voice-orb.html          # Canvas template
+      voice-orb.css           # Component styles
+    src/public-api.ts         # Library entry point (exports VoiceOrb)
+    ng-package.json           # ng-packagr configuration
+    package.json              # npm package metadata
+src/                          # Demo application
   app/
-    components/
-      voice-orb/          # Core 3D visualization component
-        voice-orb.ts      # Three.js scene, mic logic, animation loop
-        voice-orb.html    # Canvas template
-        voice-orb.css     # Component styles
-        voice-orb.spec.ts # Unit tests
-    app.ts               # Root component
-    app.config.ts        # Application configuration
-    app.spec.ts          # Root component tests
-  index.html             # Application shell
-  main.ts                # Bootstrap entry point
-  styles.css             # Global styles (Tailwind, background)
+    app.ts                   # Root component (consumes the library)
+    app.config.ts            # Application configuration
+    app.spec.ts              # Root component tests
+    app.html                 # Root template
+    app.css                  # Root styles
+  index.html                 # Application shell
+  main.ts                    # Bootstrap entry point
+  styles.css                 # Global styles (Tailwind, background)
 ```
 
 ## Browser Support

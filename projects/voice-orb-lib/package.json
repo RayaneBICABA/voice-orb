@@ -1,0 +1,24 @@
+{
+  "name": "@pank4ss/voice-orb-lib",
+  "version": "0.0.1",
+  "description": "Reusable, audio-responsive 3D component (Angular + Three.js) for voice assistants",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PANK4SS/voice-orb"
+  },
+  "license": "MIT",
+  "author": "Pankassi Jean-Louis Rayane BICABA",
+  "keywords": ["angular", "three.js", "voice", "audio", "3d", "visualization"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "three": "^0.185.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
